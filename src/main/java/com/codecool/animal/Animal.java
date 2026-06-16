@@ -5,6 +5,7 @@ public abstract class Animal {
     private String name;
     private int age;
     private int health;
+    protected String display;
 
     public Animal(String name, int age, int health) {
         if (name == null || name.trim().isEmpty()) {
@@ -28,6 +29,8 @@ public abstract class Animal {
         }
     }
 
+
+
     public String getName() {
         return name;
     }
@@ -44,4 +47,13 @@ public abstract class Animal {
     //public String getHealthStatus() { return "";}
 
     public abstract void makeSound();
+
+    public String getHealthStatus() {
+        if(health>80){
+            return "Healthy and Happy";
+        } else if(health<80 && health>50){
+            return "A bit tired";
+        }
+        return "A bit tired";
+    }
 }
